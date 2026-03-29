@@ -1,0 +1,73 @@
+body {
+    background-color: #f0eff2;
+}
+
+.page {
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .page {
+        width: 80%;
+    }
+}
+.tabs {
+    border-bottom: solid 2px #000;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tabs a {
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.tabs a.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.request-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.request-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    color: #666;
+    table-layout: fixed;
+}
+
+.request-table th,
+.request-table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.request-table th {
+    border-bottom: solid 3px #ccc;
+}
+.request-table td {
+    border-bottom: solid 2px #ccc;
+}
+
+.request-table td span,
+.request-table td a {
+    color: #000;
+    font-weight: bold;
+}
+
+.request-table tr:last-child td {
+    border-bottom: none;
+}

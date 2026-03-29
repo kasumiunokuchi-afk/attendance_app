@@ -1,0 +1,128 @@
+body {
+    background-color: #f0eff2;
+}
+
+.page {
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .page {
+        width: 80%;
+    }
+}
+
+/* 詳細テーブル */
+
+.attendance-detail {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.attendance-detail-table {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.attendance-detail-table th,
+.attendance-detail-table td {
+    border-bottom: solid 2px #ccc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.attendance-detail-table tr:last-child th,
+.attendance-detail-table tr:last-child td {
+    border-bottom: none;
+}
+
+.attendance-detail-table th {
+    width: 25%;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.attendance-detail-table td {
+    padding-left: 5%;
+    padding-right: 15%;
+    color: #000;
+    font-weight: bold;
+}
+
+.updatable td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.attendance-detail-table input {
+    border: 1px solid #ccc;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.attendance-detail-table .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    justify-items: center;
+}
+
+.attendance-detail-table .detail-grid5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    justify-items: center;
+}
+
+.attendance-detail-table textarea {
+    border: 1px solid #ccc;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: left;
+    grid-column: 2/5;
+    width: 100%;
+}
+
+.grid-column_2 {
+    grid-column: 2;
+}
+
+.detail-grid5 .error-message {
+    grid-column: 2/5;
+}
+
+.detail__footer {
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.detail__footer span {
+    color: #e77f7d;
+}
+
+.detail__footer .btn {
+    width: 150px;
+    border-radius: 5px;
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

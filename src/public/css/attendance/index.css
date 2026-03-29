@@ -1,0 +1,40 @@
+.app {
+    background-color: #f0eff2;
+    flex: 1;
+}
+
+.page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance__status p {
+    background: #c8c8c8;
+    border-radius: 15px;
+    padding: 2px 15px;
+}
+
+.today {
+    margin-top: 20px;
+}
+.today div {
+    font-size: 20px;
+}
+
+.current__time {
+    margin-top: 30px;
+}
+.current__time div {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.attendance__buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
