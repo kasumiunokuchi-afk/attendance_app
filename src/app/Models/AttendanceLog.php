@@ -4,20 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\AttendanceLogType;
 
-class Rest extends Model
+class AttendanceLog extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'attendance_id',
-        'rest_start_at',
-        'rest_end_at',
+        'user_id',
+        'log_type',
+        'logged_at'
     ];
 
     protected $casts = [
-        'rest_start_at' => 'datetime',
-        'rest_end_at' => 'datetime',
+        'log_type' => AttendanceLogType::class,
     ];
 
     public function attendance()

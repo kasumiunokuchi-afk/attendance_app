@@ -2,98 +2,12 @@
 
 ## 環境構築
 
-### Docker ビルド
+1. Dockerを起動する
 
-1. git リポジトリをクローンする
-
-```bash
-mkdir test-unokuchi
-cd test-unokuchi
-git clone git@github.com:kasumiunokuchi-afk/attendance_app.git
-cd attendance_app
-```
-
-2. Docker をビルドする
+2. プロジェクト直下で、以下のコマンドを実行する
 
 ```bash
-docker-compose up -d --build
-```
-
-### Laravel 環境構築
-
-1. php コンテナにログイン
-
-```bash
-docker-compose exec php bash
-```
-
-2. パッケージをインストール
-
-```bash
-composer install
-```
-
-3. 環境変数の設定
-
-```bash
-cp .env.example .env
-exit
-code .
-```
-
-.env 作成後、vscode を使用して以下の変更を行う。
-
-```
-修正ファイル： .env
-
-<変更前>
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
-
-<変更後>
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
-DB_PASSWORD=laravel_pass
-
-```
-
-4. php コンテナに再ログイン
-
-```bash
-docker-compose exec php bash
-```
-
-5. アプリケーション用 KEY の作成
-
-```bash
-php artisan key:generate
-```
-
-6. DB のマイグレーション
-
-```bash
-php artisan migrate
-```
-
-7. ストレージ設定
-
-画像表示のため、以下のコマンドを実行してください。
-
-```bash
-php artisan storage:link
-```
-
-8.  シーディングの実行
-
-```bash
-php artisan db:seed
+make init
 ```
 
 ## 使用技術（実行環境）
@@ -108,12 +22,21 @@ php artisan db:seed
 
 ### 管理アカウント
 
-- email: default@example.com
+#### 管理者1
+
+- email: admin1@gmail.com
 - password: password
 
 ### 一般アカウント
 
-- email: default@example.com
+#### 一般ユーザー1
+
+- email: general1@gmail.com
+- password: password
+
+#### 一般ユーザー2
+
+- email: general2@gmail.com
 - password: password
 
 ## ER 図
@@ -122,9 +45,14 @@ php artisan db:seed
 
 ## URL
 
-- 開発環境
-  TODO:書き直せ
-  http://localhost/
+### 開発環境
 
-- phpMyAdmin
-  http://localhost:8080/
+- 一般ユーザーログイン画面  
+  http://localhost/login
+
+- 管理者ユーザーログイン画面  
+  http://localhost/admin/login
+
+### phpMyAdmin
+
+http://localhost:8080/

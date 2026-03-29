@@ -1,0 +1,85 @@
+body {
+    background-color: #f0eff2;
+}
+
+.page {
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .page {
+        width: 80%;
+    }
+}
+
+/* 一覧遷移バー */
+.attendance-list__bar {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.attendance-list__bar span {
+    font-weight: bold;
+}
+
+.attendance-list__bar span svg {
+    transform: translateY(20%);
+}
+
+.attendance-list__bar a {
+    color: #666;
+}
+
+/* 一覧表示 */
+.attendance-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.attendance-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    color: #666;
+}
+
+.attendance-table__date,
+.attendance-table__user {
+    width: 20%;
+}
+
+.attendance-table__col {
+    width: 16%;
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.attendance-table th {
+    border-bottom: solid 3px #ccc;
+}
+.attendance-table td {
+    border-bottom: solid 2px #ccc;
+}
+
+.attendance-table td span,
+.attendance-table td a {
+    color: #000;
+    font-weight: bold;
+}
+
+.attendance-table tr:last-child td {
+    border-bottom: none;
+}

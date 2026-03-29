@@ -59,13 +59,13 @@
                     @csrf
                     <button class="btn btn-short">退勤</button>
                 </form>
-                <form method="POST" action="{{ route('attendance.breakStart') }}">
+                <form method="POST" action="{{ route('attendance.restStart') }}">
                     @csrf
                     <button class="btn btn-short btn-white">休憩入</button>
                 </form>
 
             @elseif($status === \App\Enums\AttendanceStatus::BREAKING)
-                <form method="POST" action="{{ route('attendance.breakEnd') }}">
+                <form method="POST" action="{{ route('attendance.restEnd') }}">
                     @csrf
                     <button class="btn btn-short btn-white">休憩戻</button>
                 </form>

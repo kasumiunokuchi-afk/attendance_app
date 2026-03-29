@@ -21,6 +21,11 @@ body {
     flex-direction: column;
 }
 
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ヘッダー */
 /* タブレットサイズ以外 */
 .header {
@@ -91,7 +96,7 @@ body {
     }
 
     .header__auth {
-        grid-column: 3;
+        grid-column: 4;
         display: flex;
         justify-content: end;
         gap: 20px;
@@ -118,15 +123,30 @@ body {
 .content {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: center;
-    height: calc(100vh - 80px);
 }
 
 .content__heading {
     margin-top: 32px;
     text-align: center;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
+}
+
+.content__title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
+    width: 100%;
+    border-left: 6px solid black;
+    padding-left: 10px;
+}
+
+.page {
+    height: 100vh; /* 画面いっぱい */
+    display: flex;
+    flex-direction: column;
 }
 
 /* ボタン */
@@ -204,4 +224,13 @@ a {
     transform: translateY(-50%);
     font-size: 12px;
     pointer-events: none;
+}
+
+/*. 共通 */
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
 }

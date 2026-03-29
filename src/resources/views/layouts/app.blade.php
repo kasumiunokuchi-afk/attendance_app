@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flea market</title>
+    <title>attendance app</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="{{ asset('/css/common.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,9 +16,15 @@
 <body>
     <div class="app">
         <header class="header">
-            <a href="/">
-                <img src="{{ '/img/COACHTECHヘッダーロゴ.png' }}" class="header__img">
-            </a>
+            @if(auth() && auth()->user() && auth()->user()->isAdmin())
+                <a href="/attendance">
+                    <img src="{{ '/img/COACHTECHヘッダーロゴ.png' }}" class="header__img">
+                </a>
+            @else
+                <a href="/admin/attendance/list">
+                    <img src="{{ '/img/COACHTECHヘッダーロゴ.png' }}" class="header__img">
+                </a>
+            @endif
             @yield('header')
         </header>
         <div class="content">
