@@ -12,9 +12,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.approve-btn').forEach(button => {
                 button.addEventListener('click', async () => {
-
                     const id = button.dataset.id;
-                    console.log("aaaaa");
                     const response = await fetch(`/stamp_correction_request/approve/${id}`, {
                         method: 'POST',
                         headers: {

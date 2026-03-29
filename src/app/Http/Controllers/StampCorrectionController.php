@@ -89,7 +89,7 @@ class StampCorrectionController extends Controller
 
         foreach ($stampCorrection->stampCorrectionRests as $stampCorrectionRest) {
 
-            if ($stampCorrectionRest['id'] === null) {
+            if ($stampCorrectionRest['rest_id'] === null) {
                 // 行追加
                 Rest::create(
                     [
@@ -99,7 +99,7 @@ class StampCorrectionController extends Controller
                     ]
                 );
             } else {
-                $rest = Rest::findOrFail($stampCorrectionRest['id']);
+                $rest = Rest::findOrFail($stampCorrectionRest['rest_id']);
                 $rest->update([
                     'updated_at' => now(),
                     'rest_start_at' => $stampCorrectionRest->rest_start_at,
