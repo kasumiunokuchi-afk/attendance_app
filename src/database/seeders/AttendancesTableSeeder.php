@@ -19,12 +19,12 @@ class AttendancesTableSeeder extends Seeder
     public function run()
     {
         $now = Carbon::now();
-        // 作成期間:先月〜今月の今日まで
-        // ① 先月
-        $lastMonthStart = $now->copy()->subMonth()->startOfMonth();
-        $lastMonthEnd = $now->copy()->subMonth()->endOfMonth();
 
-        // ② 今月（昨日まで）
+        // ① 先月（安全版）
+        $lastMonthStart = $now->copy()->startOfMonth()->subMonth();
+        $lastMonthEnd = $now->copy()->startOfMonth()->subMonth()->endOfMonth();
+
+        // ② 今月
         $thisMonthStart = $now->copy()->startOfMonth();
         $yesterday = $now->copy()->subDay();
 
